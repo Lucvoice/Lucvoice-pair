@@ -1,239 +1,212 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LUCVOICE-XMD | PAIRING SITE</title>
-  
-  <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LUCVOICE-XMD | PAIRING SITE</title><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet"><style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins', sans-serif;
+}
 
-    body {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
-      padding: 20px;
-      perspective: 1000px; /* Muhimu kwa 3D Tilt */
-    }
+body{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background: radial-gradient(circle at top, #1f1c2c, #928dab);
+  padding:20px;
+  overflow:hidden;
+}
 
-    /* Main Card - Ina athari ya kupinda */
-    .container {
-      max-width: 500px;
-      width: 100%;
-      background: rgba(255, 255, 255, 0.95);
-      border-radius: 30px;
-      padding: 40px 30px;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-      text-align: center;
-      transition: transform 0.1s ease-out;
-      transform-style: preserve-3d;
-    }
+/* GLASSMORPHISM CONTAINER */
+.container{
+  max-width:520px;
+  width:100%;
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border:1px solid rgba(255,255,255,0.25);
+  border-radius:30px;
+  padding:35px 25px;
+  box-shadow:0 25px 80px rgba(0,0,0,0.4);
+  text-align:center;
 
-    /* Logo Section */
-    .logo {
-      width: 90px;
-      height: 90px;
-      margin: 0 auto 20px;
-      background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
-      border-radius: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 3px solid white;
-      transform: translateZ(50px); /* Inatokeza mbele */
-    }
+  transform-style:preserve-3d;
+  transition: transform 0.6s ease;
+  position:relative;
+}
 
-    .logo i {
-      font-size: 40px;
-      color: white;
-    }
+/* BENDING EFFECT */
+.container:hover{
+  transform: perspective(1000px) rotateX(10deg) rotateY(-10deg) scale(1.03);
+}
 
-    h1 {
-      font-size: 2rem;
-      font-weight: 700;
-      color: #333;
-      margin-bottom: 5px;
-      transform: translateZ(30px);
-    }
+/* Glow */
+.container::before{
+  content:"";
+  position:absolute;
+  width:280px;
+  height:280px;
+  background: radial-gradient(circle, #00ffe1, transparent);
+  filter: blur(80px);
+  top:-90px;
+  left:-90px;
+  z-index:-1;
+}
 
-    .subtitle {
-      color: #666;
-      font-size: 0.9rem;
-      margin-bottom: 25px;
-      transform: translateZ(20px);
-    }
+/* LOGO */
+.logo{
+  width:95px;
+  height:95px;
+  margin:0 auto 15px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background: linear-gradient(135deg,#667eea,#764ba2);
+  border:2px solid rgba(255,255,255,0.5);
+  font-size:40px;
+  color:white;
+  box-shadow:0 0 25px rgba(0,255,225,0.4);
+}
 
-    /* QR Code Display */
-    .qr-container {
-      background: #f8f9fa;
-      padding: 15px;
-      border-radius: 20px;
-      margin-bottom: 20px;
-      display: inline-block;
-      border: 2px dashed #4facfe;
-      transform: translateZ(40px);
-    }
+h1{
+  color:#00ffe1;
+  font-size:2rem;
+  letter-spacing:2px;
+}
 
-    .qr-container img {
-      width: 150px;
-      height: 150px;
-    }
+.subtitle{
+  color:#eee;
+  font-size:0.9rem;
+  margin-bottom:20px;
+}
 
-    /* Input Style */
-    .input-box {
-      margin-bottom: 20px;
-      transform: translateZ(25px);
-    }
+/* STATS */
+.stats{
+  display:flex;
+  justify-content:space-around;
+  background:rgba(0,0,0,0.25);
+  padding:15px;
+  border-radius:15px;
+  margin-bottom:25px;
+}
 
-    input {
-      width: 100%;
-      padding: 15px;
-      border: 2px solid #eee;
-      border-radius: 12px;
-      outline: none;
-      font-size: 1rem;
-      text-align: center;
-      transition: 0.3s;
-    }
+.stat-number{
+  color:#00ffe1;
+  font-weight:700;
+}
 
-    input:focus {
-      border-color: #4facfe;
-    }
+.stat-label{
+  font-size:0.7rem;
+  color:#ccc;
+}
 
-    /* Button Grid */
-    .button-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-      margin: 15px 0;
-      transform: translateZ(35px);
-    }
+/* BUTTON GRID */
+.button-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+}
 
-    .btn {
-      padding: 12px;
-      border: none;
-      border-radius: 10px;
-      font-weight: 600;
-      font-size: 0.9rem;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      color: white;
-      text-decoration: none;
-      transition: 0.3s;
-    }
+.btn{
+  padding:12px;
+  border:none;
+  border-radius:12px;
+  color:white;
+  font-weight:600;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  transition:0.3s;
+}
 
-    .btn:hover { transform: scale(1.05); }
+.btn:hover{
+  transform:scale(1.05);
+  opacity:0.9;
+}
 
-    .btn.pair { background: #4facfe; grid-column: span 2; padding: 15px; font-size: 1rem; }
-    .btn.group { background: #25D366; }
-    .btn.github { background: #333; }
-    .btn.contact { background: #FF6B6B; }
-    .btn.channel { background: #764ba2; }
+.group{background:#25D366;}
+.pair{background:#ff6b6b;}
+.github{background:#333;}
+.contact{background:#0077b5;}
+.channel{background:#ff69b4;}
+.render{background:#46e3b7;color:#111;}
 
-    .footer {
-      margin-top: 20px;
-      font-size: 0.8rem;
-      color: #888;
-    }
+.btn-wide{
+  grid-column:span 2;
+}
 
-  </style>
-</head>
-<body>
+.footer{
+  margin-top:20px;
+  font-size:0.75rem;
+  color:#ddd;
+  display:flex;
+  justify-content:center;
+  gap:15px;
+}
 
-  <div class="container" id="card">
-    
-    <div class="logo">
-      <i class="fas fa-bolt"></i>
+.footer a{
+  color:#00ffe1;
+  cursor:pointer;
+  text-decoration:none;
+}
+
+@media (max-width:500px){
+  .button-grid{grid-template-columns:1fr;}
+  .btn-wide{grid-column:span 1;}
+}
+
+</style></head>
+<body><div class="container">  <div class="logo">🪀</div>  <h1>LUCVOICE-XMD</h1>
+  <div class="subtitle">WhatsApp Bot • Glassmorphism System</div>  <div class="stats">
+    <div>
+      <div class="stat-number">1500+</div>
+      <div class="stat-label">Users</div>
     </div>
-
-    <h1>LUCVOICE-XMD</h1>
-    <div class="subtitle">Advanced WhatsApp Utility Bot</div>
-
-    <!-- QR Section -->
-    <div class="qr-container">
-      <img src="https://qrserver.com" alt="QR Code">
-      <p style="font-size: 10px; color: #4facfe; margin-top: 5px; font-weight: bold;">SCAN QR TO PAIR</p>
+    <div>
+      <div class="stat-number">350+</div>
+      <div class="stat-label">Groups</div>
     </div>
-
-    <!-- Pairing Section -->
-    <div class="input-box">
-      <input type="text" id="number" placeholder="Enter Phone (+255...)">
+    <div>
+      <div class="stat-number">150+</div>
+      <div class="stat-label">Cmds</div>
     </div>
+  </div>  <div class="button-grid"><button class="btn group" onclick="window.open('https://chat.whatsapp.com/DTnrZzULVtP5r0E9rhoFOj','_blank')">
+  <i class="fab fa-whatsapp"></i> WA Group
+</button>
 
-    <div class="button-grid">
-      <button onclick="getPair()" class="btn pair">
-        <i class="fas fa-key"></i> GET PAIRING CODE
-      </button>
+<button class="btn pair" onclick="window.open('/pair','_blank')">
+  <i class="fas fa-link"></i> Pair Code
+</button>
 
-      <button onclick="window.open('https://whatsapp.com')" class="btn group">
-        <i class="fab fa-whatsapp"></i> Support
-      </button>
+<button class="btn github" onclick="window.open('https://github.com/bravesebastian458-dotcom/Sebastian-Md','_blank')">
+  <i class="fab fa-github"></i> GitHub
+</button>
 
-      <button onclick="window.open('https://github.com')" class="btn github">
-        <i class="fab fa-github"></i> Repo
-      </button>
+<button class="btn contact" onclick="window.open('https://wa.me/255612619717','_blank')">
+  <i class="fas fa-headset"></i> Contact
+</button>
 
-      <button onclick="window.open('https://wa.me/255612619717')" class="btn contact">
-        <i class="fas fa-user"></i> Owner
-      </button>
+<button class="btn channel" onclick="window.open('https://whatsapp.com/channel/0029VatokI45EjxufALmY32X','_blank')">
+  <i class="fas fa-tv"></i> Channel 1
+</button>
 
-      <button onclick="window.open('https://whatsapp.com')" class="btn channel">
-        <i class="fas fa-bell"></i> News
-      </button>
-    </div>
+<button class="btn channel" onclick="window.open('https://whatsapp.com/channel/0029Vb7LxhRGE56l9woRjd2g','_blank')">
+  <i class="fas fa-tv"></i> Channel 2
+</button>
 
-    <div class="footer">
-      &copy; 2024 LUCVOICE-XMD • Built with ❤️
-    </div>
+<button class="btn render btn-wide" onclick="window.open('https://render.com/deploy?repo=https://github.com/bravesebastian458-dotcom/Sebastian-Md','_blank')">
+  <i class="fas fa-cloud-upload-alt"></i> Deploy Render
+</button>
 
-  </div>
-
-  <script>
-    const card = document.getElementById('card');
-
-    // 3D Tilt Logic
-    document.addEventListener('mousemove', (e) => {
-      let xAxis = (window.innerWidth / 2 - e.pageX) / 25;
-      let yAxis = (window.innerHeight / 2 - e.pageY) / 25;
-      card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
-    });
-
-    // Reset position when mouse leaves
-    document.addEventListener('mouseleave', () => {
-      card.style.transform = `rotateY(0deg) rotateX(0deg)`;
-      card.style.transition = "all 0.5s ease";
-    });
-
-    document.addEventListener('mouseenter', () => {
-      card.style.transition = "none";
-    });
-
-    function getPair() {
-      const num = document.getElementById('number').value;
-      if(num) {
-        alert("Generating code for: " + num);
-        // Link logic yako hapa
-      } else {
-        alert("Please enter a number!");
-      }
-    }
-  </script>
-
-</body>
+  </div>  <div class="footer">
+    <a onclick="navigator.clipboard.writeText('https://sebastian-md.onrender.com');alert('Copied ✅')">📋 Copy URL</a>
+    <a onclick="location.reload()">🔄 Refresh</a>
+  </div></div></body>
 </html>
