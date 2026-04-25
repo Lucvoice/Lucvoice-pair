@@ -1,195 +1,147 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LUCVOICE-XMD | PAIRING SITE</title><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet"><style>
+<title>LUCVOICE-XMD</title>
+
+<style>
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family:'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 body{
-  min-height:100vh;
+  height:100vh;
   display:flex;
-  align-items:center;
   justify-content:center;
-  background: radial-gradient(circle at top, #1f1c2c, #928dab);
-  padding:20px;
+  align-items:center;
+  background: radial-gradient(circle at top,#0f2027,#203a43,#000);
   overflow:hidden;
 }
 
-/* GLASSMORPHISM CONTAINER */
-.container{
-  max-width:520px;
-  width:100%;
-  background: rgba(255,255,255,0.12);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border:1px solid rgba(255,255,255,0.25);
-  border-radius:30px;
-  padding:35px 25px;
-  box-shadow:0 25px 80px rgba(0,0,0,0.4);
-  text-align:center;
+/* animated background glow */
+body::before{
+  content:"";
+  position:absolute;
+  width:400px;
+  height:400px;
+  background: #00ffe0;
+  filter: blur(150px);
+  opacity:0.15;
+  top:10%;
+  left:20%;
+  animation: move 6s infinite alternate;
+}
 
-  transform-style:preserve-3d;
-  transition: transform 0.6s ease;
+@keyframes move{
+  from{ transform: translate(0,0);}
+  to{ transform: translate(100px,80px);}
+}
+
+/* glass card */
+.card{
+  width:340px;
+  height:220px;
+  border-radius:25px;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(20px);
+  border:1px solid rgba(255,255,255,0.2);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  color:#00ffe0;
+  text-align:center;
+  transition: transform 0.2s ease;
   position:relative;
 }
 
-/* BENDING EFFECT */
-.container:hover{
-  transform: perspective(1000px) rotateX(10deg) rotateY(-10deg) scale(1.03);
-}
-
-/* Glow */
-.container::before{
+/* glow ring */
+.card::before{
   content:"";
   position:absolute;
-  width:280px;
-  height:280px;
-  background: radial-gradient(circle, #00ffe1, transparent);
-  filter: blur(80px);
-  top:-90px;
-  left:-90px;
+  width:120%;
+  height:120%;
+  border-radius:30px;
+  background: radial-gradient(circle, rgba(0,255,224,0.25), transparent 70%);
   z-index:-1;
-}
-
-/* LOGO */
-.logo{
-  width:95px;
-  height:95px;
-  margin:0 auto 15px;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background: linear-gradient(135deg,#667eea,#764ba2);
-  border:2px solid rgba(255,255,255,0.5);
-  font-size:40px;
-  color:white;
-  box-shadow:0 0 25px rgba(0,255,225,0.4);
+  filter: blur(20px);
 }
 
 h1{
-  color:#00ffe1;
-  font-size:2rem;
-  letter-spacing:2px;
+  font-size:26px;
+  letter-spacing:3px;
+  animation: glow 2s infinite alternate;
 }
 
-.subtitle{
-  color:#eee;
-  font-size:0.9rem;
-  margin-bottom:20px;
+p{
+  font-size:14px;
+  margin-top:10px;
+  color:#ffffffaa;
 }
 
-/* STATS */
-.stats{
-  display:flex;
-  justify-content:space-around;
-  background:rgba(0,0,0,0.25);
-  padding:15px;
-  border-radius:15px;
-  margin-bottom:25px;
+@keyframes glow{
+  from{text-shadow:0 0 5px #00ffe0;}
+  to{text-shadow:0 0 20px #00ffe0,0 0 40px #00ffe0;}
 }
 
-.stat-number{
-  color:#00ffe1;
-  font-weight:700;
+/* copyright */
+footer{
+  position:absolute;
+  bottom:15px;
+  font-size:12px;
+  color:#ffffff80;
 }
 
-.stat-label{
-  font-size:0.7rem;
-  color:#ccc;
+/* small floating effect */
+@keyframes float{
+  0%{transform:translateY(0px);}
+  50%{transform:translateY(-10px);}
+  100%{transform:translateY(0px);}
 }
 
-/* BUTTON GRID */
-.button-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:12px;
+.card{
+  animation: float 4s ease-in-out infinite;
 }
+</style>
+</head>
 
-.btn{
-  padding:12px;
-  border:none;
-  border-radius:12px;
-  color:white;
-  font-weight:600;
-  cursor:pointer;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
-  transition:0.3s;
-}
+<body>
 
-.btn:hover{
-  transform:scale(1.05);
-  opacity:0.9;
-}
+<div class="card" id="card">
+  <h1>LUCVOICE-XMD</h1>
+  <p>Glassmorphism AI Interface</p>
+</div>
 
-.group{background:#25D366;}
-.pair{background:#ff6b6b;}
-.github{background:#333;}
-.contact{background:#0077b5;}
-.channel{background:#ff69b4;}
-.render{background:#46e3b7;color:#111;}
+<footer>© 2026 LUCVOICE-XMD | All Rights Reserved</footer>
 
-.btn-wide{
-  grid-column:span 2;
-}
+<script>
+const card = document.getElementById("card");
 
-.footer{
-  margin-top:20px;
-  font-size:0.75rem;
-  color:#ddd;
-  display:flex;
-  justify-content:center;
-  gap:15px;
-}
+// 3D bend effect
+document.addEventListener("mousemove",(e)=>{
+  let x = (window.innerWidth/2 - e.clientX)/25;
+  let y = (window.innerHeight/2 - e.clientY)/25;
+  card.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
+});
 
-.footer a{
-  color:#00ffe1;
-  cursor:pointer;
-  text-decoration:none;
-}
+// reset
+document.addEventListener("mouseleave",()=>{
+  card.style.transform = "rotateY(0deg) rotateX(0deg)";
+});
 
-@media (max-width:500px){
-  .button-grid{grid-template-columns:1fr;}
-  .btn-wide{grid-column:span 1;}
-}
+// touch support
+document.addEventListener("touchmove",(e)=>{
+  let t = e.touches[0];
+  let x = (window.innerWidth/2 - t.clientX)/25;
+  let y = (window.innerHeight/2 - t.clientY)/25;
+  card.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
+});
+</script>
 
-</style></head>
-<body><div class="container">  <div class="logo">🪀</div>  <h1>LUCVOICE-XMD</h1>
-  <div class="subtitle">WhatsApp Bot • Glassmorphism System</div>  <div class="stats">
-    <div>
-      <div class="stat-number">1500+</div>
-      <div class="stat-label">Users</div>
-    </div>
-    <div>
-      <div class="stat-number">350+</div>
-      <div class="stat-label">Groups</div>
-    </div>
-    <div>
-      <div class="stat-number">150+</div>
-      <div class="stat-label">Cmds</div>
-    </div>
-  </div>  <div class="button-grid"><button class="btn group" onclick="window.open('https://chat.whatsapp.com/DTnrZzULVtP5r0E9rhoFOj','_blank')">
-  <i class="fab fa-whatsapp"></i> WA Group
-</button>
-
-<button class="btn pair" onclick="window.open('/pair','_blank')">
-  <i class="fas fa-link"></i> Pair Code
-</button>
-
-<button class="btn qr" onlick="window.open('/qr','_blank')">
-   <i class="fas fa-link"></i> Qr Code
-
-  </div>  <div class="footer">
-    <a onclick="navigator.clipboard.writeText('https://sebastian-md.onrender.com');alert('Copied ✅')">📋 Copy URL</a>
-    <a onclick="location.reload()">🔄 Refresh</a>
-  </div></div></body>
+</body>
 </html>
