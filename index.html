@@ -1,254 +1,114 @@
-<!DOCTYPE html>
-<html lang="sw">
+<!DOCTYPE html><html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LUCVOICE-XMD | Pairing Portal</title>
-    <style>
-        :root {
-            --primary: #00f2fe;
-            --secondary: #4facfe;
-            --accent: #00ff88;
-            --bg-dark: #080810;
-        }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>LUCVOICE-XMD</title><!-- QR CODE LIB --><script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script><style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
 
-        body {
-            background-color: var(--bg-dark);
-            color: white;
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            overflow: hidden;
-        }
+body{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background: radial-gradient(circle at top, #0f0c29, #302b63, #24243e);
+  color:#fff;
+}
 
-        /* 3D Perspective */
-        .wrapper {
-            perspective: 1000px;
-        }
+.container{
+  width:340px;
+  padding:20px;
+  border-radius:20px;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(15px);
+  border:1px solid rgba(255,255,255,0.2);
+  box-shadow:0 0 40px rgba(0,255,225,0.2);
+  text-align:center;
+}
 
-        .card {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(20px);
-            width: 360px;
-            padding: 30px;
-            border-radius: 25px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
-            transform-style: preserve-3d;
-            transition: transform 0.1s ease-out;
-            text-align: center;
-        }
+.logo{
+  font-size:40px;
+  margin-bottom:10px;
+}
 
-        .brand {
-            font-size: 26px;
-            font-weight: 900;
-            background: linear-gradient(to right, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 5px;
-            letter-spacing: 1px;
-        }
+h1{
+  font-size:24px;
+  letter-spacing:2px;
+  color:#00ffe1;
+}
 
-        .status {
-            font-size: 11px;
-            color: var(--accent);
-            margin-bottom: 25px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 6px;
-            text-transform: uppercase;
-        }
+.pair-box{
+  margin-top:15px;
+  padding:10px;
+  background: rgba(0,0,0,0.3);
+  border-radius:12px;
+}
 
-        .status-dot {
-            width: 7px;
-            height: 7px;
-            background: var(--accent);
-            border-radius: 50%;
-            box-shadow: 0 0 10px var(--accent);
-            animation: pulse 1.5s infinite;
-        }
+.code{
+  font-size:22px;
+  font-weight:bold;
+  letter-spacing:3px;
+  color:#ffd700;
+}
 
-        @keyframes pulse {
-            0% { opacity: 1; }
-            50% { opacity: 0.4; }
-            100% { opacity: 1; }
-        }
+button{
+  margin-top:10px;
+  padding:10px 15px;
+  border:none;
+  border-radius:10px;
+  cursor:pointer;
+  background: linear-gradient(45deg,#00ffe1,#00aaff);
+  color:#000;
+  font-weight:bold;
+}
 
-        /* Tabs Selection */
-        .tabs {
-            display: flex;
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 12px;
-            margin-bottom: 25px;
-            padding: 5px;
-        }
+#qrcode{
+  margin-top:15px;
+  display:flex;
+  justify-content:center;
+}
 
-        .tab-btn {
-            flex: 1;
-            padding: 10px;
-            cursor: pointer;
-            border-radius: 8px;
-            font-size: 14px;
-            transition: 0.3s;
-            border: none;
-            background: transparent;
-            color: #888;
-        }
+.footer{
+  margin-top:15px;
+  font-size:12px;
+  opacity:0.7;
+}
 
-        .tab-btn.active {
-            background: var(--secondary);
-            color: black;
-            font-weight: bold;
-        }
+</style></head>
+<body><div class="container">  <div class="logo">🪀</div>
+  <h1>LUCVOICE-XMD</h1>
+  <p>AI Pairing System</p>  <div class="pair-box">
+    <p>Your Pairing Code:</p>
+    <div class="code" id="code">LOADING...</div>
+    <button onclick="generateCode()">Generate Code</button>
+  </div>  <div id="qrcode"></div>  <div class="footer">© 2026 LUCVOICE-XMD SYSTEM</div>
+</div><script>
+function generateCode(){
+  let chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+  let code = "";
 
-        .content-section {
-            display: none;
-            animation: fadeIn 0.5s ease;
-        }
+  for(let i=0;i<8;i++){
+    code += chars.charAt(Math.floor(Math.random()*chars.length));
+  }
 
-        .content-section.active {
-            display: block;
-        }
+  document.getElementById("code").innerText = code;
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+  // QR code
+  document.getElementById("qrcode").innerHTML = "";
+  new QRCode(document.getElementById("qrcode"), {
+    text: "LUCVOICE-XMD-PAIR:" + code,
+    width: 180,
+    height: 180,
+    colorDark: "#00ffe1",
+    colorLight: "#ffffff"
+  });
+}
 
-        /* Pairing Input */
-        .input-box {
-            text-align: left;
-            margin-bottom: 20px;
-        }
-
-        input {
-            width: 100%;
-            padding: 14px;
-            background: rgba(0, 0, 0, 0.4);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            color: white;
-            outline: none;
-            box-sizing: border-box;
-            margin-top: 8px;
-        }
-
-        /* QR Code Placeholder */
-        .qr-placeholder {
-            width: 180px;
-            height: 180px;
-            background: white;
-            margin: 0 auto 20px;
-            padding: 10px;
-            border-radius: 15px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .qr-placeholder img {
-            width: 100%;
-            height: auto;
-        }
-
-        .action-btn {
-            width: 100%;
-            padding: 15px;
-            border: none;
-            border-radius: 12px;
-            background: linear-gradient(45deg, var(--secondary), var(--primary));
-            color: black;
-            font-weight: bold;
-            cursor: pointer;
-            box-shadow: 0 10px 20px rgba(79, 172, 254, 0.3);
-            transition: 0.3s;
-        }
-
-        .action-btn:hover {
-            filter: brightness(1.1);
-            transform: translateY(-2px);
-        }
-
-        .info {
-            font-size: 12px;
-            color: #666;
-            margin-top: 15px;
-        }
-    </style>
-</head>
-<body>
-
-    <div class="wrapper" id="box">
-        <div class="card" id="card">
-            <div class="brand">LUCVOICE-XMD</div>
-            <div class="status"><div class="status-dot"></div> Server Connection Active</div>
-
-            <div class="tabs">
-                <button class="tab-btn active" onclick="showTab('pairing')">Pairing Code</button>
-                <button class="tab-btn" onclick="showTab('qr')">QR Scan</button>
-            </div>
-
-            <!-- Sehemu ya Pairing Code -->
-            <div id="pairing" class="content-section active">
-                <div class="input-box">
-                    <label style="font-size: 13px; color: #aaa;">WhatsApp Number</label>
-                    <input type="text" placeholder="+255 7xx xxx xxx">
-                </div>
-                <button class="action-btn">GENERATE CODE</button>
-            </div>
-
-            <!-- Sehemu ya QR Code -->
-            <div id="qr" class="content-section">
-                <div class="qr-placeholder">
-                    <!-- Hapa utaweka link ya QR image yako ya bot -->
-                    <img src="https://qrserver.com" alt="QR Code">
-                </div>
-                <p style="font-size: 13px; color: #ccc;">Scan QR hii kwenye WhatsApp yako</p>
-                <button class="action-btn">REFRESH QR</button>
-            </div>
-
-            <div class="info">
-                Go to Settings > Linked Devices > Link a Device
-            </div>
-        </div>
-    </div>
-
-    <script>
-        // Badilisha Tab
-        function showTab(tabId) {
-            document.querySelectorAll('.content-section').forEach(section => {
-                section.classList.remove('active');
-            });
-            document.querySelectorAll('.tab-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            document.getElementById(tabId).classList.add('active');
-            event.currentTarget.classList.add('active');
-        }
-
-        // Athari ya Kupinda (3D Tilt)
-        const card = document.getElementById('card');
-        const box = document.getElementById('box');
-
-        box.addEventListener('mousemove', (e) => {
-            let x = (window.innerWidth / 2 - e.pageX) / 20;
-            let y = (window.innerHeight / 2 - e.pageY) / 20;
-            card.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
-        });
-
-        box.addEventListener('mouseleave', () => {
-            card.style.transform = `rotateY(0deg) rotateX(0deg)`;
-            card.style.transition = "all 0.5s ease";
-        });
-
-        box.addEventListener('mouseenter', () => {
-            card.style.transition = "none";
-        });
-    </script>
-
-</body>
+// auto generate on load
+generateCode();
+</script></body>
 </html>
