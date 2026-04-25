@@ -59,15 +59,13 @@ router.get('/', async (req, res) => {
 				   let session = await Qr_Code_By_France_King.sendMessage(Qr_Code_By_France_King.user.id, { text: '' + b64data });
 	
 				   let FLASH_MD_TEXT = `
-THANK YOU FOR CHOOSING RAHMANI XMD
-  ╭━━━━❤━━━━╮
-  💥VERY ACTIVE 🙅
-      🕊️𝐂𝐥𝐞𝐚𝐧 𝐚𝐥𝐰𝐚𝐲𝐬🍏
-  ╰━━━━🥺━━━━╯
-|| ❒ 𝐖𝐚𝐂𝐡𝐚𝐧𝐧𝐞𝐥: _https://whatsapp.com/channel/0029VatokI45EjxufALmY32X
-║ ❒ 𝐖𝐚𝐂𝐡𝐚𝐧𝐧𝐞𝐥: _https://whatsapp.com/channel/0029VatokI45EjxufALmY32X
-follow our channel to learn how to deploy..
-Repository available at our channel`
+
+╭────[ LUCVOICE-XMD ]─────╮
+│ 📷 Scan QR Code     
+│ ⚡ Fast Connection  
+│ © Copyright 2026  
+╰─────────────────╯
+`;
 	 await Qr_Code_By_France_King.sendMessage(Qr_Code_By_France_King.user.id,{text:FLASH_MD_TEXT},{quoted:session})
 
 
