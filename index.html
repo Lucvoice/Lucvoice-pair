@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LUCVOICE-XMD | Connect</title>
+<title>LUCVOICE-XMD AI | Smart Connect</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -22,78 +22,81 @@ justify-content:center;
 align-items:center;
 padding:20px;
 background:
-radial-gradient(circle at top left,#00f0ff55,transparent 30%),
-radial-gradient(circle at bottom right,#ff00ea44,transparent 30%),
-radial-gradient(circle at center,#8a2eff33,transparent 40%),
-linear-gradient(135deg,#03040c,#09122a,#101a38,#060710);
+radial-gradient(circle at top,#00ffee33,transparent 40%),
+radial-gradient(circle at bottom,#8a2eff33,transparent 40%),
+linear-gradient(135deg,#04050f,#0a1230,#0d1b3a);
 overflow:hidden;
 }
 
-/* floating blur balls */
+/* glow */
 body::before,
 body::after{
 content:"";
 position:absolute;
-width:240px;
-height:240px;
+width:260px;
+height:260px;
 border-radius:50%;
-filter:blur(70px);
-opacity:.65;
-animation:move 8s infinite alternate ease-in-out;
+filter:blur(90px);
+opacity:.6;
+animation:move 6s infinite alternate;
 }
 
 body::before{
 background:#00ffee;
-top:-70px;
-left:-70px;
+top:-80px;
+left:-80px;
 }
 
 body::after{
-background:#ff00dd;
-bottom:-70px;
-right:-70px;
+background:#ff00ff;
+bottom:-80px;
+right:-80px;
 animation-delay:2s;
 }
 
 @keyframes move{
-0%{transform:translate(0,0);}
-100%{transform:translate(35px,35px);}
+from{transform:translate(0,0);}
+to{transform:translate(40px,40px);}
 }
 
-.container{
+.card{
 width:100%;
-max-width:530px;
+max-width:520px;
 padding:32px;
 border-radius:32px;
-background:rgba(255,255,255,.10);
-backdrop-filter:blur(25px);
--webkit-backdrop-filter:blur(25px);
-border:1px solid rgba(255,255,255,.16);
-box-shadow:
-0 25px 70px rgba(0,0,0,.45),
-inset 0 1px 0 rgba(255,255,255,.20);
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(28px);
+border:1px solid rgba(255,255,255,0.15);
+box-shadow:0 30px 80px rgba(0,0,0,0.55);
 text-align:center;
 color:#fff;
 position:relative;
-z-index:2;
 }
 
-/* logo */
+.ai{
+display:inline-block;
+padding:6px 14px;
+border-radius:50px;
+background:rgba(0,255,255,0.15);
+border:1px solid rgba(0,255,255,0.3);
+font-size:.8rem;
+margin-bottom:12px;
+color:#00ffee;
+}
+
 .logo{
 width:110px;
 height:110px;
 margin:auto;
-border-radius:30px;
+border-radius:28px;
 display:flex;
 align-items:center;
 justify-content:center;
 font-size:48px;
-background:rgba(255,255,255,.15);
-border:1px solid rgba(255,255,255,.20);
-backdrop-filter:blur(20px);
-box-shadow:0 10px 30px rgba(0,255,255,.20);
-margin-bottom:18px;
-animation:float 2.8s infinite ease-in-out;
+background:linear-gradient(135deg,#00ffee,#7b2cff);
+box-shadow:0 0 30px rgba(0,255,255,.3);
+margin-bottom:15px;
+animation:float 3s infinite ease-in-out;
 }
 
 @keyframes float{
@@ -104,79 +107,61 @@ animation:float 2.8s infinite ease-in-out;
 h1{
 font-size:2rem;
 font-weight:900;
-letter-spacing:1px;
-margin-bottom:8px;
 }
 
 h1 span{
-background:linear-gradient(90deg,#00ffee,#ffffff,#ff55ff);
+background:linear-gradient(90deg,#00ffee,#fff,#ff66ff);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 }
 
 .sub{
-font-size:.96rem;
-color:#e6e6e6;
-margin-bottom:28px;
+margin-top:8px;
+font-size:.95rem;
+color:#ddd;
+margin-bottom:25px;
 }
 
-/* cards */
 .grid{
 display:grid;
 grid-template-columns:1fr 1fr;
-gap:16px;
+gap:15px;
 }
 
-.card{
+.btn{
+padding:16px;
+border-radius:18px;
 text-decoration:none;
 color:#fff;
-padding:24px 16px;
-border-radius:24px;
-background:rgba(255,255,255,.08);
-border:1px solid rgba(255,255,255,.13);
-backdrop-filter:blur(20px);
-transition:.30s;
-box-shadow:inset 0 1px 0 rgba(255,255,255,.12);
-}
-
-.card:hover{
-transform:translateY(-6px) scale(1.02);
-background:rgba(255,255,255,.13);
-}
-
-.card i{
-font-size:44px;
-margin-bottom:14px;
-display:block;
-}
-
-.card h2{
-font-size:1.08rem;
 font-weight:800;
-margin-bottom:8px;
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:8px;
+transition:.25s;
+background:rgba(255,255,255,0.08);
+border:1px solid rgba(255,255,255,0.12);
+backdrop-filter:blur(15px);
 }
 
-.card p{
-font-size:.84rem;
-color:#e0e0e0;
+.btn i{
+font-size:30px;
 }
 
-.pair i{
-color:#00ff99;
+.btn:hover{
+transform:translateY(-6px);
+background:rgba(255,255,255,0.16);
 }
 
-.qr i{
-color:#00d9ff;
-}
+.pair i{color:#00ff99;}
+.qr i{color:#00d9ff;}
 
-/* footer */
 .footer{
-margin-top:24px;
-padding-top:18px;
-border-top:1px solid rgba(255,255,255,.10);
-font-size:.86rem;
-color:#ddd;
-line-height:1.8;
+margin-top:22px;
+padding-top:15px;
+border-top:1px solid rgba(255,255,255,0.1);
+font-size:.85rem;
+color:#ccc;
 }
 
 .footer span{
@@ -184,55 +169,42 @@ color:#00ffee;
 font-weight:700;
 }
 
-.copy{
-color:#ff77ff;
-font-weight:700;
-}
-
-/* mobile */
-@media(max-width:540px){
-.container{
-padding:24px;
-}
+@media(max-width:520px){
 .grid{
 grid-template-columns:1fr;
-}
-h1{
-font-size:1.7rem;
 }
 }
 </style>
 </head>
 <body>
 
-<div class="container">
+<div class="card">
+
+<div class="ai">AI SYSTEM ACTIVE</div>
 
 <div class="logo">
-<i class="fas fa-robot"></i>
+<i class="fas fa-brain"></i>
 </div>
 
 <h1><span>LUCVOICE-XMD</span></h1>
-<p class="sub">Premium WhatsApp Pairing Portal</p>
+<p class="sub">Smart AI WhatsApp Connection System</p>
 
 <div class="grid">
 
-<a href="/pair" class="card pair" target="_blank">
+<a href="/pair" class="btn pair">
 <i class="fas fa-link"></i>
-<h2>Pairing Code</h2>
-<p>Generate secure connection code instantly</p>
+Pairing Code
 </a>
 
-<a href="/qr" class="card qr" target="_blank">
+<a href="/qr" class="btn qr">
 <i class="fas fa-qrcode"></i>
-<h2>QR Code</h2>
-<p>Scan and connect your WhatsApp fast</p>
+QR Code
 </a>
 
 </div>
 
 <div class="footer">
-Powered By <span>LUCVOICE-XMD</span><br>
-<span class="copy">Copyright © 2026</span>
+Powered by <span>LUCVOICE-XMD AI</span> © 2026
 </div>
 
 </div>
