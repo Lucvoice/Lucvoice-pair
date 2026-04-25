@@ -56,29 +56,14 @@ router.get('/', async (req, res) => {
                let b64data = Buffer.from(data).toString('base64');
                let session = await Pair_Code_By_France_King.sendMessage(Pair_Code_By_France_King.user.id, { text: ''+ b64data });
 
-               let FLASH_MD_TEXT = `
-
-
-
-
-❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒
-*_Pair Code Connected by SEBASTIAN MD*
-______________________________________
-╔════◇
-║ *『 THANKS 🤠👍 FOR  SHOWING LOVE』*
-║ _You Have Completed the First Step to Deploy a Whatsapp Bot._
-╚════════════════════════╝
-╔═════◇
-║  『••• 𝗩𝗶𝘀𝗶𝘁 𝗙𝗼𝗿 𝗛𝗲𝗹𝗽 •••』
-║❒ *Owner:* _https://wa.me/255612619717_
-║❒ *Repo:* _https://github.com/bravesebastian458-dotcom/Sebastian-Md
-║❒ *WaChannel:* _https://whatsapp.com/channel/0029Vb7LxhRGE56l9woRjd2g _
-║❒ WaChannel 2:* _https://whatsapp.com/channel/0029VatokI45EjxufALmY32X _
-║❒ 
-╚════════════════════════╝
-_____________________________________
-❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒❒
-`
+               let FLASH_MD_TEXT=`
+               
+╭────[ LUCVOICE-XMD ]─────╮
+│ 📷 Scan QR Code     
+│ ⚡ Fast Connection  
+│ © Copyright 2026  
+╰─────────────────╯
+`;
  await Pair_Code_By_France_King.sendMessage(Pair_Code_By_France_King.user.id,{text:FLASH_MD_TEXT},{quoted:session})
  
 
