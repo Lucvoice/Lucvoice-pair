@@ -1,60 +1,64 @@
 <h1 align="center">
-  🚀 𝐋𝐔𝐊𝐀-𝐀𝐈 🚀
+🧠💻 𝐋𝐔𝐊𝐀-𝐀𝐈 | NEXT GEN BOT 💻🧠
 </h1><p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?color=00FFAA&size=28&center=true&vCenter=true&width=600&lines=POWERFUL+WHATSAPP+BOT;FAST+%26+SECURE;DEPLOY+EASILY;CREATED+BY+LUKA" />
+  <img src="https://readme-typing-svg.herokuapp.com?color=39FF14&size=26&center=true&vCenter=true&width=700&lines=INITIALIZING+LUKA-AI...;SYSTEM+ONLINE+✔;HACKER+MODE+ACTIVATED;READY+TO+DEPLOY🚀" />
 </p><p align="center">
-  <a href="https://github.com/TristanCage/LUKA-AI">
-    <img src="https://files.catbox.moe/ia1mgm.jpg" width="400"/>
-  </a>
+  <img src="https://files.catbox.moe/ia1mgm.jpg" width="420"/>
 </p><p align="center">
-  <img src="https://img.shields.io/github/forks/TristanCage/LUKA-AI?style=for-the-badge&color=blue">
-  <img src="https://img.shields.io/github/stars/TristanCage/LUKA-AI?style=for-the-badge&color=yellow">
-  <img src="https://img.shields.io/github/license/TristanCage/LUKA-AI?style=for-the-badge&color=green">
+  <img src="https://img.shields.io/badge/STATUS-ONLINE-39FF14?style=for-the-badge">
+  <img src="https://img.shields.io/badge/VERSION-2.0-black?style=for-the-badge">
+  <img src="https://img.shields.io/badge/POWER-AI-blue?style=for-the-badge">
 </p>---
 
-<h2 align="center">⚡ FEATURES ⚡</h2><p align="center">
-✔️ Multi Device Support <br>
-✔️ Fast & Stable <br>
-✔️ Easy Deployment <br>
-✔️ Powerful Plugins <br>
-✔️ 24/7 Online Bot <br>
+<h2 align="center">🧩 SYSTEM FEATURES</h2><p align="center">
+⚡ Ultra Fast Response <br>
+🛡️ Advanced Security <br>
+🤖 Smart AI Commands <br>
+📡 24/7 Active <br>
+🧬 Auto Updates <br>
 </p>---
 
-<h2 align="center">📌 SETUP GUIDE</h2><p align="center">🔹 STEP 1 — FORK REPO
-
+<h2 align="center">⚙️ INSTALLATION PROCESS</h2><p align="center">🔻 CLONE / FORK
 <a href="https://github.com/TristanCage/LUKA-AI/fork">
-<img src="https://img.shields.io/badge/FORK-REPOSITORY-blue?style=for-the-badge">
-</a>---
+<img src="https://img.shields.io/badge/START-FORKING-39FF14?style=for-the-badge">
+</a>
 
-🔹 STEP 2 — GET SESSION
+---
 
+🔻 GENERATE SESSION
 <a href="https://www.cypherx.space/">
-<img src="https://img.shields.io/badge/GET-SESSION-red?style=for-the-badge">
-</a>---
+<img src="https://img.shields.io/badge/SESSION-ID-red?style=for-the-badge">
+</a>
 
-🔹 STEP 3 — DEPLOY
+---
 
+🔻 DEPLOY SYSTEM
 <a href="https://dashboard.heroku.com/new?template=https://github.com/TristanCage/LUKA-AI">
-<img src="https://img.shields.io/badge/DEPLOY-HEROKU-purple?style=for-the-badge">
-</a>---
+<img src="https://img.shields.io/badge/DEPLOY-NOW-purple?style=for-the-badge">
+</a>
 
-🔹 STEP 4 — DOWNLOAD ZIP
+---
 
+🔻 DOWNLOAD FILES
 <a href="https://codeload.github.com/TristanCage/LUKA-AI/zip/refs/heads/main">
-<img src="https://img.shields.io/badge/DOWNLOAD-ZIP-orange?style=for-the-badge">
-</a></p>---
+<img src="https://img.shields.io/badge/GET-ZIP-orange?style=for-the-badge">
+</a>
 
-<h2 align="center">👨‍💻 OWNER</h2><p align="center">
+</p>---
+
+<h2 align="center">👨‍🚀 DEVELOPER</h2><p align="center">
 <a href="https://github.com/TristanCage">
-<img src="https://img.shields.io/badge/LUKA-AI-OWNER-darkgreen?style=for-the-badge&logo=github">
+<img src="https://img.shields.io/badge/LUKA--AI-DEVELOPER-39FF14?style=for-the-badge&logo=github">
 </a>
 </p>---
 
-<h2 align="center">⚠️ DISCLAIMER</h2><p align="center">
-This bot is for educational purposes only.  
-Use at your own risk.  
+<h2 align="center">🚨 WARNING</h2><p align="center">
+Unauthorized use is not allowed ⚠️ <br>
+This system is for testing & educational use only.
 </p>---
 
-<h2 align="center">💬 SUPPORT</h2><p align="center">
-Need help? Reach out anytime 🤝  
+<h2 align="center">📡 TERMINAL</h2><p align="center">
+> LUKA-AI connected... <br>
+> Waiting for commands... <br>
+> System ready ✔
 </p>
