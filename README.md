@@ -1,6 +1,6 @@
 <h1 align="center"> 𝐋𝐔𝐊𝐀-𝐀𝐈 </h1><p align="center">
   <a href="https://github.com/TristanCage/LUKA-AI">
-    <img alt="LUKA-AI docs" height="350" src="https://files.catbox.moe/ia1mgm.jpg">
+    <img alt="LUKA-AI docs" height="350" src="https://files.catbox.moe/5mmt2y.png">
   </a>
 </p><p align="center">
 <a href="https://github.com/TristanCage">
